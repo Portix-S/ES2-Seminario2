@@ -83,6 +83,11 @@ botao_salvar.click()
 # Teste Listagem de Clientes
 print("\n\nTESTAR EDITAR CLIENTE\n\n")
 
+# Lista
+tabela = driver.find_element('css selector', 'table')
+print(f'Encontrou? {"Sim" if tabela != None else "Não"}')
+print(f'É visível? {"Sim" if tabela.is_displayed() else "Não"}')
+
 # Editar
 botao_editar = driver.find_element("css selector", "a[href='/clientes/editar/21']")
 botao_editar.click()
@@ -136,6 +141,11 @@ botao_salvar.click()
 print(f'Achou Salvar? {"Sim" if botao_salvar != None else "Não"}')
 
 # Remover cliente
+
+# Lista
+tabela = driver.find_element('css selector', 'table')
+print(f'Encontrou? {"Sim" if tabela != None else "Não"}')
+print(f'É visível? {"Sim" if tabela.is_displayed() else "Não"}')
 
 print("\n\nTESTAR REMOVER CLIENTE\n\n")
 botao_remover = driver.find_element("id", "btn_clientes/excluirPorId/21")
