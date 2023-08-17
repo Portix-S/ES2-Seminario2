@@ -8,7 +8,7 @@ btnLocadoras = driver.find_element('css selector', '.nav-item:nth-child(2) > .na
 btnLocadoras.click()
 
 # TESTE LISTAGEM DE LOCADORAS
-print('R3 - TESTE LISTAGEM DE LOCADORAS')
+print('R3 - TESTE LISTAGEM DE LOCADORAS\n')
 
 # testa se existe a tabela de locadoras
 tabela = driver.find_element('css selector', 'table')
@@ -24,12 +24,10 @@ locCadastradas = tabela.find_elements("css selector", "tbody > tr")
 locCadastradas = [loc for loc in locCadastradas if loc.is_displayed()]
 print(f'Possui locadoras cadastradas? {"Sim, existem " + str(len(locCadastradas)) if len(locCadastradas) > 0 else "Não"}')
 
-print()
-print('----------------------------------------------')
-print()
+print('\n----------------------------------------------\n')
 
 # TESTE LISTAGEM DE LOCADORAS POR CIDADE
-print('R4 - TESTE LISTAGEM DE LOCADORAS POR CIDADE')
+print('R4 - TESTE LISTAGEM DE LOCADORAS POR CIDADE\n')
 
 lista = driver.find_element('css selector', 'select') # retorna o select
 lista.click() # abre a lista
@@ -51,3 +49,5 @@ print(f'Possui locadoras cadastradas? {"Sim, existem " + str(len(linhas)) if len
 print(f'As locadoras listadas são da cidade escolhida? {"Sim" if all(cidadeEscolhida in loc.find_element("css selector", "td:nth-child(6)").text for loc in linhas) else "Não"}')
 
 driver.quit()
+
+print('\n----------------------------------------------\n')

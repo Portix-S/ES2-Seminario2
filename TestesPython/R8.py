@@ -33,7 +33,7 @@ def deslogar():
     driver.find_element(By.CSS_SELECTOR, 'input[value="Logout"]').click()
 
 
-print("\n\nTESTAR LISTAR LOCACOES\n\n")
+print("R8 - LISTAR LOCAÇÕES DA LOCADORA\n")
 
 # Teste Cadastrar - Locadora
 logar('conserta_bike@gmail.com', '123')
@@ -41,3 +41,5 @@ listar_locacoes_locadoras()
 deslogar()
 
 driver.quit()
+
+print('\n----------------------------------------------\n')

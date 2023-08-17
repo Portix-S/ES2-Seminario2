@@ -40,6 +40,8 @@ def assert_cadastro_locacao():
 def deslogar():
     driver.find_element(By.CSS_SELECTOR, 'input[value=Logout]').click()
 
+print("R7 - LOCACOES NO MESMO HORÁRIO\n")
+
 print('Cadastrando Locação com o Pietro')
 logar_cliente('pietro@pietro.com', '123')
 assert_cadastro_locacao()
@@ -51,3 +53,5 @@ assert_cadastro_locacao()
 deslogar()
 
 driver.quit()
+
+print('\n----------------------------------------------\n')

@@ -32,8 +32,12 @@ def listar_locacoes_clientes():
 def deslogar():
     driver.find_element(By.CSS_SELECTOR, 'input[value="Logout"]').click()
 
+print("R6 - LISTAR CLIENTES\n")
+
 logar('pietro@pietro.com', '123')
 listar_locacoes_clientes()
 deslogar()
 
 driver.quit()
+
+print('\n----------------------------------------------\n')

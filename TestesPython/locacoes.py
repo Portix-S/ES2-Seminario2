@@ -8,8 +8,7 @@ driver.get("http://localhost:8080/")
 
 # TESTE CADASTRO DE LOCAÇÃO
 def R5():
-    print('R5 - TESTE CADASTRO DE LOCAÇÃO')
-    print()
+    print('R5 - TESTE CADASTRO DE LOCAÇÃO\n')
 
     # Encontrar o botão de login usando o seletor CSS
     botao_login = driver.find_element("css selector", 'input[value="Login"]')
@@ -101,9 +100,6 @@ def R5():
     
 
 R5()
-
-print()
-print('----------------------------------------------')
-print()
+print('\n----------------------------------------------\n')
 
 driver.quit()
