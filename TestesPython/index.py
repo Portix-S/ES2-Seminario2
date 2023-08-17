@@ -5,3 +5,5 @@ import locacoes;
 import R6;
 import R7;
 import R8;
+import R9;
+import R10;
