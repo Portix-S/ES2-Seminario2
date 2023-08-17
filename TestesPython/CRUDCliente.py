@@ -1,7 +1,6 @@
 
 from selenium.webdriver.support.ui import Select
 from selenium import webdriver
-from selenium.webdriver.common.by import By
 
 
 driver = webdriver.Firefox()
@@ -155,3 +154,5 @@ print(f'Achou Remover? {"Sim" if botao_remover != None else "Não"}')
 botao_confirmar = driver.find_element("id", 'ok_confirm')
 botao_confirmar.click()
 print(f'Achou Confirmar? {"Sim" if botao_confirmar != None else "Não"}')
+
+driver.quit()

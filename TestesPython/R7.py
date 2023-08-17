@@ -1,10 +1,8 @@
-from selenium import webdriver as wd
+from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver import Chrome
-from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.keys import Keys
 
-driver = Chrome()
+driver = webdriver.Chrome()
 driver.get("http://127.0.0.1:8080/")
 
 def logar_cliente(login, password):
@@ -22,7 +20,7 @@ def logar_cliente(login, password):
     #campo_senha.send_keys("123")
 
     # Encontrar o botão "Entrar" e clicar nele
-    driver.find_element(By.CSS_SELECTOR, 'input[value="LogIn"]').click()
+    driver.find_element(By.ID, 'login-submit').click()
     #botao_entrar.click()
 
 def assert_cadastro_locacao():
@@ -51,3 +49,5 @@ print('Cadastrando Locação com o Rafael')
 logar_cliente('rafael@rafael.com', '123')
 assert_cadastro_locacao()
 deslogar()
+
+driver.quit()

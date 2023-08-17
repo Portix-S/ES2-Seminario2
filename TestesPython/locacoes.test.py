@@ -1,9 +1,8 @@
 import time
-from selenium.webdriver import Chrome
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
-driver = webdriver.Chrome()
+driver = webdriver.Firefox()
 driver.get("http://localhost:8080/")
 
 
@@ -47,8 +46,8 @@ def R5():
     btnLocadora.find_element('css selector', 'option:nth-child(2)').click() # seleciona a segunda opção (primeira opção é "Selecione")
 
     entradaData = driver.find_element('id', 'dataHora')
-    entradaData.send_keys('31/12/2023' + Keys.TAB + '12') # chrome
-    # entradaData.send_keys('12/31/2023' + Keys.TAB + '12:00' + Keys.TAB + Keys.ARROW_UP) # firefox
+    # entradaData.send_keys('31/12/2023' + Keys.TAB + '12') # chrome
+    entradaData.send_keys('12/31/2023' + Keys.TAB + '12:00' + Keys.TAB + Keys.ARROW_UP) # firefox
 
     btnSalvar = driver.find_element('css selector', 'button[type="submit"]')
     btnSalvar.click()
@@ -84,7 +83,7 @@ def R5():
         # testa se existe o botão de confirmar exclusão
         botao_confirmar = driver.find_element('id', 'ok_confirm')
         print(f'Achou Confirmar? {"Sim" if botao_confirmar != None else "Não"}')
-        driver.execute_script("arguments[0].click();", botao_confirmar)
+        botao_confirmar.click()
         print('Click no botão de confirmar exclusão')
 
         time.sleep(0.5)
@@ -106,3 +105,5 @@ R5()
 print()
 print('----------------------------------------------')
 print()
+
+driver.quit()

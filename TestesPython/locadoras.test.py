@@ -1,8 +1,6 @@
-from selenium.webdriver import Chrome
-from selenium.webdriver.support.ui import Select
 from selenium import webdriver
 
-driver = webdriver.Chrome()
+driver = webdriver.Firefox()
 driver.get("http://127.0.0.1:8080/")
 
 # retorna o botão, tag <a></a>
@@ -52,3 +50,4 @@ linhas = [linha for linha in linhas if linha.is_displayed()]
 print(f'Possui locadoras cadastradas? {"Sim, existem " + str(len(linhas)) if len(linhas) > 0 else "Não"}')
 print(f'As locadoras listadas são da cidade escolhida? {"Sim" if all(cidadeEscolhida in loc.find_element("css selector", "td:nth-child(6)").text for loc in linhas) else "Não"}')
 
+driver.quit()
