@@ -1,8 +1,5 @@
 
-from selenium.webdriver.support.ui import Select
 from selenium import webdriver
-from selenium.webdriver.common.by import By
-
 
 driver = webdriver.Firefox()
 driver.get("http://localhost:8080/")
@@ -27,7 +24,7 @@ botao_entrar.click()
 
 # Demonstrar funções do CRUD
 
-print("\n\nTESTAR CADASTRAR LOCADORA\n\n")
+print("R2 - TESTAR CADASTRAR LOCADORA\n")
 
 # Teste Cadastrar - Locadora
 btnLocadora = driver.find_element("css selector", "a[href='/locadoras/cadastrar']")
@@ -70,7 +67,7 @@ botao_salvar = driver.find_element("css selector", 'button[type="submit"]')
 botao_salvar.click()
 
 # Teste Listagem de Clientes
-print("\n\nTESTAR EDITAR CLIENTE\n\n")
+print("\nR2 - TESTAR EDITAR LOCADORA\n")
 
 
 # Lista
@@ -128,7 +125,7 @@ tabela = driver.find_element('css selector', 'table')
 print(f'Encontrou? {"Sim" if tabela != None else "Não"}')
 print(f'É visível? {"Sim" if tabela.is_displayed() else "Não"}')
 
-print("\n\nTESTAR REMOVER CLIENTE\n\n")
+print("\nR2 - TESTAR REMOVER CLIENTE\n")
 botao_remover = driver.find_element("id", "btn_locadoras/excluirPorId/8")
 botao_remover.click()
 print(f'Achou Remover? {"Sim" if botao_remover != None else "Não"}')
@@ -136,3 +133,7 @@ print(f'Achou Remover? {"Sim" if botao_remover != None else "Não"}')
 botao_confirmar = driver.find_element("id", 'ok_confirm')
 botao_confirmar.click()
 print(f'Achou Confirmar? {"Sim" if botao_confirmar != None else "Não"}')
+
+driver.quit()
+
+print('\n----------------------------------------------\n')

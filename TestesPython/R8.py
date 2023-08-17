@@ -1,9 +1,7 @@
-from selenium import webdriver as wd
+from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver import Chrome
-from selenium.webdriver.support.ui import Select
 
-driver = Chrome()
+driver = webdriver.Chrome()
 driver.get("http://127.0.0.1:8080/")
 
 def logar(login, password):
@@ -17,7 +15,7 @@ def logar(login, password):
     driver.find_element(By.CSS_SELECTOR, 'input[name="password"]').send_keys(password)
 
     # Encontrar o botão "Entrar" e clicar nele
-    driver.find_element(By.CSS_SELECTOR, 'input[value="LogIn"]').click()
+    driver.find_element(By.ID, 'login-submit').click()
 
 def listar_locacoes_locadoras():
     driver.find_element(By.CSS_SELECTOR, 'a[href*="/locacoes/listar"]').click()
@@ -35,9 +33,13 @@ def deslogar():
     driver.find_element(By.CSS_SELECTOR, 'input[value="Logout"]').click()
 
 
-print("\n\nTESTAR LISTAR LOCACOES\n\n")
+print("R8 - LISTAR LOCAÇÕES DA LOCADORA\n")
 
 # Teste Cadastrar - Locadora
 logar('conserta_bike@gmail.com', '123')
 listar_locacoes_locadoras()
 deslogar()
+
+driver.quit()
+
+print('\n----------------------------------------------\n')
