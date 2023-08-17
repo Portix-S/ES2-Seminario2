@@ -79,7 +79,7 @@ print(f'Encontrou? {"Sim" if tabela != None else "Não"}')
 print(f'É visível? {"Sim" if tabela.is_displayed() else "Não"}')
 
 # Editar
-botao_editar = driver.find_element("css selector", "a[href='/locadoras/editar/8']")
+botao_editar = driver.find_element("css selector", "a[href='/locadoras/editar/7']")
 botao_editar.click()
 print(f'Achou Editar? {"Sim" if botao_editar != None else "Não"}')
 
@@ -129,7 +129,7 @@ print(f'Encontrou? {"Sim" if tabela != None else "Não"}')
 print(f'É visível? {"Sim" if tabela.is_displayed() else "Não"}')
 
 print("\n\nTESTAR REMOVER CLIENTE\n\n")
-botao_remover = driver.find_element("id", "btn_locadoras/excluirPorId/8")
+botao_remover = driver.find_element("id", "btn_locadoras/excluirPorId/7")
 botao_remover.click()
 print(f'Achou Remover? {"Sim" if botao_remover != None else "Não"}')
 
