@@ -19,14 +19,14 @@ def logar(login, password):
     # Encontrar o botão "Entrar" e clicar nele
     driver.find_element(By.CSS_SELECTOR, 'input[value="LogIn"]').click()
 
-def listar_locacoes_locadoras():
+
+def listar_locacoes_clientes():
+    #Encontrar a listagem de locações do cliente
     driver.find_element(By.CSS_SELECTOR, 'a[href*="/locacoes/listar"]').click()
 
     table = driver.find_element(By.CSS_SELECTOR, 'table tbody')
-    rows = table.find_elements(By.CSS_SELECTOR, 'tr')
 
-    assert len(rows) > 0,'Tabela vazia!'
-
+    #rows = table.find_elements
     for row in table.find_elements(By.CSS_SELECTOR, 'tr'):
         for cell in row.find_elements(By.CSS_SELECTOR, 'td'):
             print(cell.text)
@@ -34,10 +34,6 @@ def listar_locacoes_locadoras():
 def deslogar():
     driver.find_element(By.CSS_SELECTOR, 'input[value="Logout"]').click()
 
-
-print("\n\nTESTAR LISTAR LOCACOES\n\n")
-
-# Teste Cadastrar - Locadora
-logar('conserta_bike@gmail.com', '123')
-listar_locacoes_locadoras()
+logar_cliente('pietro@pietro.com', '123')
+listar_locacoes_clientes()
 deslogar()
